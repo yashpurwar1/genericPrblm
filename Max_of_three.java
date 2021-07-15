@@ -9,19 +9,29 @@ public class Max_of_three<T extends Comparable <T>> {
 		this.valueArray= valueArray;
 	}
 	
-	public T maximum (T[] valueArray) {
+	public void maximum (T[] valueArray) {
 		Arrays.sort(valueArray);
 		int len = valueArray.length;
 		T max = valueArray[len-1];
-		return max;
+		printMax(max);
 	}
+	
+	public void printMax(T max) {
+		System.out.println("Maximum is "+max);
+	}
+	
 	public static void main(String[] args) {
 		Comparable[] intArray = {1,5,8,6};
+		
 		Max_of_three test1 = new Max_of_three(intArray);
-		System.out.println("Maximun is "+test1.maximum(intArray));
+		
+		test1.maximum(intArray);
+		
 		Comparable[] stringArray = {"yash", "ankur", "saket"};
+		
 		Max_of_three test2 = new Max_of_three(stringArray);
-		System.out.println("Maximun is "+test2.maximum(stringArray));
+		
+		test2.maximum(stringArray);
 	}
 
 }
